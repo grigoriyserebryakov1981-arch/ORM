@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0284CBA5-D336-4A39-8519-3F2C48D433D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atdi.CoreServices.EntityOrm</RootNamespace>
+    <AssemblyName>Atdi.CoreServices.EntityOrm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLayerScope.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ByteBYTE.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ByteBIT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\BooleanBIT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\EnumINT32.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\EnumINT08.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ByteINT08.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\BytesBLOB.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ClrTypeCLRTYPE.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ClrTypeBYTES.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ClrTypeNTEXT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\TimeTIME.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\GuidGUID.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\DateTimeOffsetDATETIMEOFFSET.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\DateTimeDATETIME.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\DoubleDOUBLE.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\FloatFLOAT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\DecimalDECIMAL.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ShortINT16.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\SignedByteINT08.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\LongINT64.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\IntegerINT32.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\BytesBYTES.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ClrTypeBLOB.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringBYTES.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringBLOB.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringTEXT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringNTEXT.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringVARCHAR.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\StringNVARCHAR.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\BooleanBOOL.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapters\ValueReader.cs" />
+    <Compile Include="DataTypeSystem\DataTypeSystem.cs" />
+    <Compile Include="DataTypeSystem\IValueAdapter.cs" />
+    <Compile Include="DataTypeSystem\IValueDecoder.cs" />
+    <Compile Include="DataTypeSystem\IValueEncoder.cs" />
+    <Compile Include="DataTypeSystem\ValueAdapter.cs" />
+    <Compile Include="Descriptors\EntityPathDescriptor.cs" />
+    <Compile Include="Descriptors\FieldDescriptor.cs" />
+    <Compile Include="Descriptors\FieldReferenceDescriptor.cs" />
+    <Compile Include="Descriptors\FieldValueDescriptor.cs" />
+    <Compile Include="Descriptors\Query\QueryCondition.cs" />
+    <Compile Include="Descriptors\Query\QueryModification.cs" />
+    <Compile Include="Descriptors\Query\QueryRoot.cs" />
+    <Compile Include="Descriptors\Query\QuerySelection.cs" />
+    <Compile Include="Descriptors\Query\QuerySorting.cs" />
+    <Compile Include="Descriptors\DeleteQueryDescriptor.cs" />
+    <Compile Include="Descriptors\UpdateQueryDescriptor.cs" />
+    <Compile Include="Descriptors\InsertQueryDescriptor.cs" />
+    <Compile Include="Descriptors\SelectQueryDescriptor.cs" />
+    <Compile Include="Descriptors\SortableFieldDescriptor.cs" />
+    <Compile Include="EntityOrmComponentConfig.cs" />
+    <Compile Include="OLD\FieldProperties.cs" />
+    <Compile Include="OLD\ConditionParser.cs" />
+    <Compile Include="EntityOrmDataLayer.cs" />
+    <Compile Include="EntityOrm.cs" />
+    <Compile Include="EntityOrmComponent.cs" />
+    <Compile Include="EntityOrmConfig.cs" />
+    <Compile Include="ExpressionExtensions.cs" />
+    <Compile Include="OLD\EntityOrmQueryBuilder.cs" />
+    <Compile Include="Helpers\EntityDefHelper.cs" />
+    <Compile Include="Metadata\AutonumMetadata.cs" />
+    <Compile Include="Metadata\Fields\ColumnFieldMetadata.cs" />
+    <Compile Include="Metadata\DataSourceMetadata.cs" />
+    <Compile Include="Metadata\DataTypeMetadata.cs" />
+    <Compile Include="Metadata\XmlDefenitions\Entity.cs" />
+    <Compile Include="Metadata\EntityMetadata.cs" />
+    <Compile Include="Metadata\Fields\ExtensionFieldMetadata.cs" />
+    <Compile Include="Metadata\Fields\FieldMetadata.cs" />
+    <Compile Include="Metadata\PrimaryKeyMapping\PrimaryKeyFieldMappedMetadata.cs" />
+    <Compile Include="Metadata\PrimaryKey\PrimaryKeyFieldRefMetadata.cs" />
+    <Compile Include="Metadata\PrimaryKeyMapping\PrimaryKeyMappingMetadata.cs" />
+    <Compile Include="Metadata\PrimaryKey\PrimaryKeyMetadata.cs" />
+    <Compile Include="Metadata\Fields\ReferenceFieldMetadata.cs" />
+    <Compile Include="Metadata\Fields\RelationFieldMetadata.cs" />
+    <Compile Include="Metadata\UnitMetadata.cs" />
+    <Compile Include="PatternBuilderFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBuilder.cs" />
+    <Compile Include="QueryDataReader.cs" />
+    <Compile Include="Helpers\ConditionHelper.cs" />
+    <Compile Include="QueryPatterns\BuildingContext.cs" />
+    <Compile Include="QueryPatterns\UpdatePatternBuilder.cs" />
+    <Compile Include="QueryPatterns\DeletePatternBuilder.cs" />
+    <Compile Include="QueryPatterns\SelectPatternBuilder.cs" />
+    <Compile Include="QueryPatterns\InsertPatternBuilder.cs" />
+    <Compile Include="QueryPatterns\IPatternBuilder.cs" />
+    <Compile Include="QueryStatements\QueryDeleteStatement.cs" />
+    <Compile Include="QueryExecutor.cs" />
+    <Compile Include="QueryStatements\QueryInsertStatement.cs" />
+    <Compile Include="OLD\Conversion.cs" />
+    <Compile Include="QueryStatements\QuerySelectStatement.cs" />
+    <Compile Include="QueryStatements\QueryUpdateStatement.cs" />
+    <Compile Include="OLD\AliasField.cs" />
+    <Compile Include="Specification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Atdi.Common\Atdi.Common.csproj">
+      <Project>{d3cffba9-c232-4c8d-bacd-5a30ded686d2}</Project>
+      <Name>Atdi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts\CoreServices\Atdi.Contracts.CoreServices.DataLayer\Atdi.Contracts.CoreServices.DataLayer.csproj">
+      <Project>{e5011dd5-16c5-4cd0-ada3-d783f11c7c61}</Project>
+      <Name>Atdi.Contracts.CoreServices.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contracts\CoreServices\Atdi.Contracts.CoreServices.EntityOrm\Atdi.Contracts.CoreServices.EntityOrm.csproj">
+      <Project>{4247b867-4fab-40de-a539-7026d30cc245}</Project>
+      <Name>Atdi.Contracts.CoreServices.EntityOrm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataModels\Atdi.DataModels.EntityOrm\Atdi.DataModels.EntityOrm.csproj">
+      <Project>{73c8791e-3fc5-4c91-84e5-c19c98096f10}</Project>
+      <Name>Atdi.DataModels.EntityOrm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataModels\Atdi.DataModels\Atdi.DataModels.csproj">
+      <Project>{506b3655-4706-42f8-87f1-fb13869aa4c1}</Project>
+      <Name>Atdi.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Platform\Atdi.Platform\Atdi.Platform.csproj">
+      <Project>{2c2b4fdf-ff87-49b5-8080-da8a5715710a}</Project>
+      <Name>Atdi.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atdi.CoreServices.DataLayer\Atdi.CoreServices.DataLayer.csproj">
+      <Project>{edda5ccc-25b7-4b50-a8d7-ccb617727497}</Project>
+      <Name>Atdi.CoreServices.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
